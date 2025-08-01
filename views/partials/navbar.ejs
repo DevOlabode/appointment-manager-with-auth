@@ -1,0 +1,43 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary" href="/">Appointment Manager</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left Nav -->
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/booking">Appointments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/booking/new">New Appointment</a>
+        </li>
+      </ul>
+
+      <!-- Right Nav -->
+      <ul class="navbar-nav ms-auto align-items-center">
+        <% if (!currentUser) { %>
+          <li class="nav-item me-2">
+            <a class="btn btn-outline-primary btn-sm" href="/login">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary btn-sm" href="/register">Register</a>
+          </li>
+        <% } else { %>
+          <li class="nav-item me-3 text-muted small">
+            👋 Hello, <a href="/userInfo" class="text-decoration-none fw-semibold text-success"><%= currentUser.username %></a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-danger btn-sm" href="/logout">Log Out</a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

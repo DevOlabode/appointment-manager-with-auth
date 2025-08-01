@@ -1,0 +1,25 @@
+
+<% layout('/layout/boilerplate.ejs') %>
+
+<div class="d-flex justify-content-between align-items-center p-4 border-bottom">
+  <h3 class="fs-4 text-success m-0">Appointment List</h3>
+  <a href="/booking/new" class="btn btn-primary">Add a New Appointment</a>
+</div>
+
+<ul class="list-group">
+  <% if (count == 0) { %>
+    <div class="text-center opacity-50 my-5">
+      <p class="mb-1">Appointment list seems to be empty.</p>
+      <p>Why not add one?</p>
+    </div>
+  <% } else { %>
+    <% for (let booking of bookings) { %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/booking/<%= booking._id %>" class="text-decoration-none text-primary">
+          <%= booking.service %>
+        </a>
+        <a href="/booking/<%= booking._id %>" class="btn btn-success btn-sm">View</a>
+      </li>
+    <% } %>
+  <% } %>
+</ul>
