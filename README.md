@@ -90,7 +90,7 @@ appointment-manager-with-auth/
 ├── public/             # Static assets (CSS, JS)
 ├── views/              # EJS templates
 ├── utils/              # Custom error classes
-├── app.js / index.js   # Main server file
+├── index.js            # Main server file
 ├── .env                # Local env vars (not committed)
 ```
 
