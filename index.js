@@ -1,6 +1,7 @@
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
+const PORT = process.env.PORT || 3000;
 
 
 const express  = require('express');
@@ -85,7 +86,6 @@ app.use((err, req, res, next)=>{
     }
     res.status(statusCode).render('appointment/error', { err })
 });
-
-app.listen('3000', ()=>{
-    console.log('Listening on port 3000')
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
 });
